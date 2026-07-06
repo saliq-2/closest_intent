@@ -231,7 +231,7 @@ The integration can be set up entirely in the UI (**Settings** -> **Devices & se
 | `slot_extraction` | `true` | Extract slot values from the user's speech and substitute them into the canonical sentence. Disable to make the integration only correct slot-less phrases. (Why would you do this though, this is the best part!)|
 | `fallback_agent` | `conversation.home_assistant` | Agent consulted if no match for the canonical sentence is found. Default is Hassil itself, i.e. "no fallback". Set to an LLM agent if you want one. |
 | `startup_self_check` | `true` | After the candidate pool is built, feed every custom intent's own canonical form back through the matcher. Any intent whose perfect input does not route to itself is reported as a HomeAssistant repair issue. Useful for spotting two intents that shadow each other. Disable if the repair issue is noisy. |
-| `suggestions` | `true` | When nothing clears `threshold` (and Hassil's own parse of the raw text also fails), respond with a spoken "did you mean ...?" naming up to two near-miss candidates, instead of silently forwarding to `fallback_agent`. Disable to restore the old passthrough-only behavior. |
+| `suggestions` | `true` | When nothing clears `threshold` (and Hassil's own parse of the raw text also fails), respond with a spoken "did you mean ...?" naming up to two near-miss candidates, instead of silently forwarding to `fallback_agent`. Disable to restore the old passthrough-only behavior. See [docs/suggestions.md](docs/suggestions.md) for where this response shows up. |
 
 #### YAML configuration
 
